@@ -1,0 +1,137 @@
+SWS ASSIGNMENT 5
+BY Dhruv Singh
+
+Q1. Binary to Decimal
+#include <stdio.h>
+int main() {
+int n, c, k;
+printf("Enter an integer (decimal system) \n");
+scanf("%d", &n);
+printf("%d in binaar system is :\n", n);
+for (c = 31; c >= 0; c--) {
+k = n >> c;
+if (k & 1)
+printf("1");
+else
+printf("0"); } 
+printf("\n");
+return 0;
+}
+
+Q2 Decimal to Binary
+#include <stdio.h>
+#include<math.h>
+int BinaryToDecimal(long long n);
+int main() { 
+long long n; 
+printf("binary number: "); 
+scanf("%lld", &n); 
+printf("%lld in binary = %d in decimal“, n, BinaryToDecimal(n)); 
+return 0;
+}
+int BinaryToDecimal(long long n) { 
+int decimalNumberformed = 0, i = 0, remainder; 
+while (n!=0) { 
+remainder = n%10; 
+n /= 10; 
+decimalNumber += remainder*pow(2,i);
+++i; } 
+return decimalNumberformed;
+}
+
+Q3. Decimal to Octal
+#include <stdio.h>
+#include <math.h>
+int DecimalToOctal(int DNumber);
+int main(){
+int DNumber;
+printf("Enter a decimal number: ");
+scanf("%d", &DNumber);
+printf("%d in decimal = %d in octal", DNumber, DecimalToOctal(DNumber));
+return 0; }
+int DecimalToOctal (int DNumber) {
+int ONumber = 0, i = 1;
+while (DNumber != 0){
+OlNumber += (DNumber % 8) * i;
+DNumber /= 8;
+i *= 10;  }
+return ONumber;
+}
+
+Q4. Octal to Decimal
+#include <stdio.h>
+#include<math.h>
+long long OctalToDecimal(int ONumber);
+int main() { 
+int ONumber;
+printf("octal number: ");
+scanf("%d", &ONumber);
+printf("%d in octal = %lld in decimal", ONumber,  OctalToDecimal(ONumber));
+return 0;
+}
+long long OctalToDecimal(int ONumber)
+{ I
+nt DNumber = 0, i = 0; 
+while(ONumber != 0) {
+ DNumber += (ONumber%10) * pow(8,i);
+++i; 
+OlNumber/=10; 
+}
+i = 1;
+return DNumber;
+}
+
+Q5. Decimal to Hexadecimal
+#include<stdio.h>
+#include<conio.h>
+int main() {
+    int decnum, rem, i=0;
+    char hexnum[50];
+    printf("Enter any decimal number: ");
+    scanf("%d", &decnum);
+    while(decnum!=0)
+    {
+        	rem = decnum%16;
+        	if(rem<10)
+            		rem = rem+48;
+        	else
+        rem = rem+55;
+        hexnum[i] = rem;
+        i++;
+        decnum = decnum/16; }
+    printf("\nEquivalent Value in Hexadecimal = ");
+    for(i=i-1; i>=0; i--) {
+       	 printf("%c", hexnum[i]);
+    	getch();
+    return 0;
+} 
+
+Q6. Hexadecimal to Decimal
+#include <stdio.h>  
+#include <math.h>  
+#include <string.h>  
+int main()  
+{  
+    char hex[17];                        
+    long long decimal, place;  
+    int i = 0, val, len;                  
+    decimal = 0;  
+    printf("Enter any hexadecimal number: ");  
+    gets(hex);  
+    len = strlen(hex);  
+    len--;  
+      while(hex[i]!='\0')  
+    {  
+           if(hex[i]>='0' && hex[i]<='9')  
+        {  
+            val = hex[i] - 48;  
+        }  
+        else if(hex[i]>='a' && hex[i]<='f')  
+        {  
+            val = hex[i] - 97 + 10;  
+        }  
+        else if(hex[i]>='A' && hex[i]<='F')  
+        {  
+            val = hex[i] - 65 + 10;  
+        }  
+ 	decimal += val * pow(16, len);  }
