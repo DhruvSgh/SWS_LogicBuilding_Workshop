@@ -1,0 +1,169 @@
+SWS Logic Building Assignment 3 
+By Dhruv Rajput
+
+Q1. Program for and gate
+#include <stdio.h>
+#include <stdlib.h>
+  int main()
+{
+    int a[5] = { 1, 0, 1, 0, 1 };
+    int b[5] = { 0, 1, 1, 0, 0 };
+    int i, and_case;
+    for (i = 0; i < 5; i++) {
+ 	and_case = a[i] & b[i];
+  	printf("\n %d AND %d = %d", a[i], b[i], and_case);}
+}
+
+Q2. Program for or gate
+#include <stdio.h>
+#include <stdlib.h>
+  int main()
+{
+    int a[5] = { 1, 0, 1, 0, 1 };
+    int b[5] = { 0, 1, 1, 0, 0 };
+    int i, or_case;
+    for (i = 0; i < 5; i++) {
+          or_case = a[i] || b[i];
+          printf("\n %d AND %d = %d", a[i], b[i], or_case); }
+}
+
+Q3. Program for nand gate
+#include <stdio.h>
+#include <stdlib.h>
+  
+int main()
+{
+   int a[5] = { 1, 0, 1, 0, 1 };
+    int b[5] = { 0, 1, 1, 0, 0 };
+    int i, ans ;
+    for (i = 0; i < 5; i++) {
+        ans = !(a[i] * b[i]);
+        printf("\n %d NAND %d = %d",
+               a[i], b[i], ans);
+    }
+}
+
+Q4. Program for not gate
+#include <stdio.h>
+#include <stdlib.h>
+  int main()
+{
+  int a[5] = { 1, 0, 1, 0, 1 };
+   int i, ans;
+   for (i = 0; i < 5; i++) {
+        ans  =  !(a[i]);
+        printf("\n  NOT %d = %d", a[i], ans);
+    }
+}
+
+Q5. Program for nor gate
+#include <stdio.h>
+#include <stdlib.h>
+  int main()
+{
+   int a[5] = { 1, 0, 1, 0, 1 };
+    int b[5] = { 0, 1, 1, 0, 0 };
+    int i, ans;
+    for (i = 0; i < 5; i++) {
+        if (a[i] == 0 && b[i] == 0)
+            ans = 1;
+        else
+            ans = 0;
+        printf("\n %d NOR %d = %d", a[i], b[i], ans);
+    }
+}
+
+Q6. number triangle
+#include<stdio.h>    
+#include<stdlib.h>  
+int main(){  
+  int i,j,k,l,n;    
+printf("Range=");    
+scanf("%d",&n);    
+for(i=1;i<=n;i++)    
+{    
+for(j=1;j<=n-i;j++)    
+{    printf(" ");   }    
+for(k=1;k<=i;k++)    
+{    printf("%d",k);    }    
+for(l=i-1;l>=1;l--)    
+{    printf("%d",l);    }    
+printf("\n");    
+}    
+return 0;  
+}  
+Q7 Pascal Triangle (Python)
+def solve(n):
+   for i in range(n+1):
+      for j in range(n-i):
+         print(' ', end='')
+
+      C = 1
+      for j in range(1, i+1):
+         print(C, ' ', sep='', end='')
+   	C = C * (i - j) // j
+      print()
+
+n = 6
+solve(n)
+
+Q8.  Biggest and lowest from an array
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+	int val[5],h,l,i;
+	clrscr();
+	for(i=0;i<5;i++)
+        {     printf("\n VALUE-%d: ",i+1);
+	scanf("%d",&val[i]); }
+	l=val[0];
+	h=val[0];
+	for(i=0;i<5;i++)
+        {
+		if(val[i]>h)
+			h=val[i];
+		else
+                { if(val[i]<l)
+	l=val[i];}
+	}
+	printf("\nHIGHEST : %d",h);
+	printf("\nLOWEST : %d",l);
+}
+
+Q9 Sum of given integers
+#include <stdio.h>
+ int getSum(int n)
+{ int sum = 0;
+    while (n != 0) {
+        sum = sum + n % 10;
+        n = n / 10; }
+    return sum; }
+ int main()
+{ int n = 78;
+    printf(" %d ", getSum(n));
+    return 0; }
+
+Q10 While loop
+#include <stdio.h>
+ nt main () {
+  int a = 10;
+   while( a < 20 ) {
+      printf("value of a is : %d\n", a);
+      a++;
+   } return 0; }
+
+Q11 do while loop
+#include <stdio.h>
+main()
+{
+    int i = 10;
+    do{
+       printf("Hello %d\n", i );
+       i = i -1;
+    }while ( i > 0 );
+return 0;
+}
+
+
+
