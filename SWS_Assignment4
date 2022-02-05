@@ -1,0 +1,141 @@
+SWS ASSIGNMENT 4 
+BY DHRUV RAJPUT
+
+Q1. Nth Arithmetic Progression
+def Nth_of_AP(a, d, N) :
+     return (a + (N - 1) * d)
+      a = 2  
+      d = 1  
+      N = 5  
+  
+print( "The ", N ,"th term of the series is : ",
+       Nth_of_AP(a, d, N))
+ 
+Q2. Sum of Arithmetic Progression
+#include <stdio.h>
+int main() {
+    int a, n, d, tn, i;  int sum = 0;
+    printf("First Number of A.P Series:  ");
+    scanf("%d", &a);
+    printf("Total Numbers in A.P Series:  ");
+    scanf("%d", &n);
+    printf("Common Difference:  ");
+    scanf("%d", &d);
+    sum = (n * (2 * a + (n - 1) * d)) / 2;
+    tn = a + (n - 1) * d;
+    printf("\n The Sum of Series A.P. : ");
+    for(i = a; i <= tn; i = i + d) {
+        if(i != tn)
+            printf("%d + ", i);
+        else
+            printf("%d = %d", i, sum);}
+    printf("\n");
+    return 0; }
+
+Q3 Geometric Progression Series
+#include <stdio.h>
+#include<math.h>
+int main() {
+    int a, n, r;
+    float tn, sum = 0;
+    printf("First Number of G.P Series:  ");
+    scanf("%d", &a);
+    printf("Total Numbers in G.P Series:  ");
+    scanf("%d", &n);
+    printf("Common Ratio:  ");
+    scanf("%d", &r);
+    sum = (a * (1 - pow(r, n ))) / (1- r);
+    tn = a * (pow(r, n - 1));
+    printf("\n The Sum of Geometric Progression Series =  %.2f", sum);
+    printf("\n The tn Term of Geometric Progression Series = %.2f \n", tn);
+    return 0;
+}
+Q4.  Pattern 1
+#include <stdio.h>
+int main() {
+int i;  int j;  i=1;
+do{
+ j=1;
+do{
+printf("%d ",j);
+j++; }
+while( j<=10 );
+printf("\n");
+i++; b}
+while( i<=5 );
+return 0;
+}
+Q5.Pattern 2
+#include<stdio.h>
+#include<conio.h>
+void main() {
+int i, j, k;
+for(i=0; i<=5; i++){
+for(j=0; j<=i;j++)
+printf("%d", j+1);
+for(k=0; k<=5-(i+1); k++)
+printf(" ");
+for(j=0; j<=i; j++)
+printf("%d", j+1);
+printf("\n");
+}
+
+Q6 Counting Different characters
+def countCharType(str):
+     vowels = 0 consonant = 0 specialChar = 0 digit = 0
+    for i in range(0, len(str)): 
+         ch = str[i] 
+  
+        if ( (ch >= 'a' and ch <= 'z') or 
+             (ch >= 'A' and ch <= 'Z') ): 
+              ch = ch.lower()
+            if (ch == 'a' or ch == 'e' or ch == 'i' 
+                        or ch == 'o' or ch == 'u'):
+                vowels += 1
+            else:
+                consonant += 1   
+        elif (ch >= '0' and ch <= '9'):
+            digit += 1
+        else:
+            specialChar += 1
+       print("Vowels:", vowels)
+    print("Consonant:", consonant) 
+    print("Digit:", digit) 
+    print("Special Character:", specialChar) 
+  str = "helo im not your frnd434235 "
+countCharType(str)
+
+
+
+Q7. Pattern 3
+#include<stdio.h>
+#include<conio.h>
+int main(){
+int n, i , j;
+printf("rows: ");
+scanf("%d",&n);
+for(i = 1; i <= n; i++) {
+for(j = 1; j <= i; j++) {
+printf("*"); }
+printf("\n"); }
+for(i = n; i >= 1; i--) {
+for(j = 1; j <= i; j++) {
+printf( "*"); }
+printf("\n"); }
+return 0;
+}
+Q8 swapping strings
+#include<stdio.h>
+  void swap1(char **str1_ptr, char **str2_ptr) {
+  char *temp = *str1_ptr;
+  *str1_ptr = *str2_ptr;
+  *str2_ptr = temp; }  
+   int main() {
+  char *str1 = "Hey !!";
+  char *str2 = "How have you been?";
+  swap1(&str1, &str2);
+  printf("str1 is %s, str2 is %s", str1, str2);
+  getchar();
+  return 0; }
+
+
